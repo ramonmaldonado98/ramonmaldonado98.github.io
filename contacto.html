@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortFolio</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" class="logo">PortFolio</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="./contacto.html" class="logo">Contacto</a></li>
+        </ul>
+    </header>
+    <br><br><br><br><br><br><br><br><br><br>
+    <div class="container">
+        <form action="#" class="form-contact" method="post" tabindex="1" onsubmit="mostrarDatos(); return false;">
+          <input type="text" class="form-contact-input" name="nombre" id="nombre" placeholder="Nombre" required />
+          <input type="email" class="form-contact-input" name="email" id="email" placeholder="Email" required />
+          <input type="tel" class="form-contact-input" name="tel" id="tel" placeholder="Telefono" />
+          <textarea class="form-contact-textarea" name="contenido" id="contenido" placeholder="Escribe tu mensaje" required></textarea>
+          <button type="submit" class="form-contact-button">Enviar</button>
+        </form>
+      </div>
+    
+      <script>
+        function mostrarDatos() {
+          var nombre = document.getElementById("nombre").value;
+          var email = document.getElementById("email").value;
+          var tel = document.getElementById("tel").value;
+          var contenido = document.getElementById("contenido").value;
+          var mensajeCompleto = "Nombre: " + nombre + "\nEmail: " + email + "\nTeléfono: " + tel + "\nMensaje: " + contenido;
+          alert(mensajeCompleto);
+        }
+      </script>
+      
+
+        <div class="footer"><strong>Copyright</strong> 2024 All Rights Reserved by Ramón Maldonado</div>
+</body>
+</html>

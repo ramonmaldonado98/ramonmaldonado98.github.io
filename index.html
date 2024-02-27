@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortFolio</title>
+
+    <style>
+      .logo{
+    color: #0a1817;
+  }
+  
+  .header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+  }
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  @media (min-width: 48em) {
+    .header li {
+      float: left;
+    }
+    .header li a {
+      padding: 20px 30px;
+    }
+    .header .menu {
+      clear: none;
+      float: right;
+      max-height: none;
+    }
+    .header .menu-icon {
+      display: none;
+    }
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+body{
+  font-family:lato, helvetica, arial, sans-serif; 
+  transform: translate3d(0px, 0px, 0px);
+  background-image: 
+     linear-gradient(0deg, rgba(0, 153, 204, .1) 1px, transparent 1px),
+     linear-gradient(90deg, rgba(0, 153, 204, .1) 1px, transparent 1px);
+  background-size:20px 20px;
+  background-color:#232323;
+  margin: 1% 0;
+}
+nav{
+  position:relative;
+  margin: 1% 5% 10% 5%;
+}
+nav>li{
+  padding:4px;
+}
+.title{
+  margin: auto 0 0 0;
+}
+.block-personal-data{
+  width:100%; height: 250px;  position: relative; overflow:hidden ; padding:120px 0;
+}
+.block-personal-data:after,.block-personal-data:before{ content: '';
+  background: #08b;
+  position: absolute; top: 0;bottom:0; right: 10%; left:-10%;
+  width: 120%;  
+  height: 75%; 
+  margin: auto; 
+  transform: rotate(-4deg);
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  z-index:-1;
+}
+.block-personal-data:before{ 
+  content: ''; 
+  transform: rotate(4deg);
+  -webkit-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  -o-transform: rotate(4deg);
+}
+@media all and (max-width: 1000px){
+  .block-personal-data:after{ -o-transform: rotate(-5deg);}
+  .block-personal-data:before{ -o-transform: rotate(5deg);}
+}
+@-webkit-media all and (max-width: 1000px){
+  .block-personal-data:after{ -webkit-transform: rotate(-5deg);}
+  .block-personal-data:before{ -webkit-transform: rotate(5deg);}
+}
+@-moz-media all and (max-width: 1000px){
+  .block-personal-data:after{ -moz-transform: rotate(-5deg);}
+  .block-personal-data:before{ -moz-transform: rotate(5deg);}
+}
+@-o-media all and (max-width: 1000px){
+  .block-personal-data:after{ -o-transform: rotate(-5deg);}
+  .block-personal-data:before{ -o-transform: rotate(5deg);}
+}
+
+h1{
+  text-align:center;
+  font-weight:300;
+  color: #fff; 
+  margin:0;}
+nav.personal-data>li h1{
+  color: #fff;
+  font-weight:400;
+  font-size: 32px;
+  padding-bottom: 10px;
+}
+nav.personal-data>li{
+  list-style:none;
+  text-align:center;
+  color:#ccc
+}
+
+.block-2-column{
+  width:100%; height: 250px;  position: relative; overflow:hidden ; padding:120px 0; 
+  margin: -90px 0 0 0;
+}
+.block-2-column:after{content:'';
+  position:absolute;top: 0;bottom:0 ; left:0;
+  
+  background:#3a3;
+  width:50.1%;
+  height:80%;
+  margin: auto;
+  transform: skew(0,-4deg);
+  -webkit-transform: skew(0deg,-4deg);
+  -moz-transform: skew(0deg,-4deg);
+  -o-transform: skew(0deg,-4deg);
+  z-index:-1;
+}
+.block-2-column:before{content:'';
+  position:absolute;top: 0;bottom:0 ; right:0;
+ 
+  background:#3a3;
+  width:50.1%;
+  height:80%;
+  margin: auto;
+  transform: skew(0deg,4deg);
+  -webkit-transform: skew(0deg,4deg);
+  -moz-transform: skew(0deg,4deg);
+  -o-transform: skew(0deg,4deg);
+  z-index:-1;}
+@media all and(max-width:1000px){
+  .block-2-column:after{transform:skew(0deg,-8deg);}
+  .block-2-column:before{transform:skew(0deg,8deg);}
+}
+@-webkit-media all and(max-width:1000px){
+  .block-2-column:after{-webkit-transform:skew(0deg,-8deg);}
+  .block-2-column:before{-webkit-transform:skew(0deg,8deg);}
+}
+@-moz-media all and(max-width:1000px){
+  .block-2-column:after{-moz-transform:skew(0deg,-8deg);}
+  .block-2-column:before{-moz-transform:skew(0deg,8deg);}
+}
+@-o-media all and(max-width:1000px){
+  .block-2-column:after{-o-transform:skew(0deg,-8deg);}
+  .block-2-column:before{-o-transform:skew(0deg,8deg);}
+}
+div.block-work-experience>div.title>h1{
+  color:white;
+  position:relative;
+}
+nav.work-experience>li{
+  list-style:none;
+  color: #242;
+}
+.block-work-experience, .block-academic-formation{
+  width: 50%;
+  height: 90%;
+  margin: 10% 0 5% 0;
+}
+.block-academic-formation{
+  position: absolute; top:0; right:0; bottom:0;
+}
+.block-work-experience{
+  position: absolute; top:0; left:0; bottom:0;
+}
+
+
+.block-3-column{
+  widht:100%;
+  height:320px;
+  position:relative;
+  overflow:hidden;
+  padding:120px 0;
+  margin: -150px 0 0 0;
+}
+.block-3-column:after,.block-3-column:before{content:'';
+  background:#3f51b5;
+  position: absolute; top: 0;bottom:0; right: 10%; left:-10%;
+  width: 120%;  
+  height: 75%; 
+  margin: auto; 
+  transform: skew(0deg,4deg);
+  -webkit-transform: skew(0deg,4deg);
+  -moz-transform: skew(0deg,4deg);
+  -o-transform: skew(0deg,4deg);
+  z-index:-2;
+}
+.block-3-column:before{content:'';
+  transform: skew(0deg,4deg);
+  -webkit-transform: skew(0deg,4deg);
+  -moz-transform: skew(0deg,4deg);
+  -o-transform: skew(0deg,4deg);
+}
+@media all and(max-width:1000px){
+  .block-3-column:after{transform: skew(0deg,4deg);}
+  .block-3-column:before{transform: skew(0deg,4deg);}
+}
+@-webkit-media all and(max-width:1000px){
+  .block-3-column:after{-webkit-transform: skew(0deg,4deg);}
+  .block-3-column:before{-webkit-transform: skew(0deg,4deg);}
+}
+@-moz-media all and(max-width:1000px){
+  .block-3-column:before{-moz-transform: skew(0deg,4deg);}
+  .block-3-column:after{-moz-transform: skew(0deg,4deg);}
+}
+@-o-media all and(max-width:1000px){
+  .block-3-column:before{-o-transform: skew(0deg,4deg);}
+  .block-3-column:after{-o-transform: skew(0deg,4deg);}
+}
+.block-extra-academic,
+.block-lenguaje,
+.block-informatic{
+  width:33%;
+  position: absolute; top:0; bottom:0;
+  margin: 10% 0 5% 0;
+}
+.block-extra-academic{
+  left:0px;
+}
+.block-lenguaje{
+  left:33%;
+}
+.block-informatic{
+  right:0px;
+}
+div.block-3-column li{
+  color:#ccc;
+}
+h2{
+  color:white;
+  text-align:left;
+  font-weight:300; 
+  font-size:18px;
+  margin:0;
+}
+.column1,.column2{
+  width:49%;
+  margin:10% auto auto auto;
+  position:absolute; top:0; bottom:0;
+}
+.column1{
+  left:0;
+}
+.column2{
+  right:0;
+}
+.column1 nav>li{
+  display: inline;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    color: #f4f4f4;
+    text-align: center;
+    font-weight: 800; 
+    padding: .8rem; 
+    font-size: 1.4rem;
+    border-bottom:1px solid white;
+  }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="./index.html" class="logo">PortFolio</a>
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+          <li><a href="./contacto.html" class="logo">Contacto</a></li>
+        </ul>
+      </header>
+      
+      <div class="title"><h1>Curriculum Vitae</h1></div>
+
+<div class="block-personal-data">
+  <nav class="personal-data">
+    <li><h1>Ramón Maldonado Santana<h1></li>
+    <li>Dirección: Plaza Condado 10 3ºC</li>
+    <li>Teléfono: (+34) 692701912</li>
+    <li>e-mail: ramonmaldonado1998@gmail.com</li>
+    <li>Fecha de nacimiento: 5 de enero del 1998</li>
+    <li>Nacionalidad: Española</li>
+  </nav>
+</div>
+  
+<div class="block-2-column">
+  <div class="block-work-experience">
+  <div class="title"><h1>Experiencia Laboral</h1></div>
+    <center><nav class="work-experience">
+      <li>[Año 2021-2022] Seguridad parking hotel</li>
+    </nav>
+  </div>
+  
+  <div class="block-academic-formation">
+  <div class="title"><h1>Formación Academica</h1></div>
+    <center><nav class="work-experience">
+      <li>[2012-2016] Educación secundaria obligatoria</li>
+      <li>[2021] Prueba de acceso grado superior</li>
+      <li>[2022-] Grado Superior DAW</li>
+    </nav>
+  </div>
+</div>
+  
+<div class="block-3-column">
+  <div class="block-extra-academic">
+    <div class="title"><h1>Redes Sociales</h1></div>
+     <nav class="work-experience">
+      <center><img src="sigeme.png" style="width:200px;height:150px;" usemap="#image-map">
+
+        <map name="image-map">
+            <area target="_blank" alt="" title="" href="https://twitter.com/maldonado9805" coords="0,2,509,420" shape="rect">
+        </map>
+    </nav>
+  </div>
+  <div class="block-lenguaje">
+    <div class="title"><h1>Idiomas</h1></div>
+    <center><nav class="work-experience">
+      <li>Español [Nativo]</li>
+      <li>Ingles [Intermedio-Alto]</li>
+    </nav>
+  </div>
+  <div class="block-informatic">
+    <div class="title"><h1>Dominios de Lenguajes.</h1></div>
+    <center><nav class="work-experience">
+        <li >Java</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>SQL</li>
+      </nav>
+    </div>
+    
+      
+    </div>
+</div>
+
+  <div class="footer"><strong>Copyright</strong> 2024 All Rights Reserved by Ramón Maldonado</div>
+ 
+</body>
+</html>
